@@ -13,10 +13,10 @@ function chageCompsDuration() {
               curComp.duration = selectedClip.duration;
             }
         }
-        var newName = selectedClip.mainSource.file.name;
-        selectedClip.name = newName.slice(0, -16);
+       # var newName = selectedClip.mainSource.file.name;
+       # selectedClip.name = newName.slice(0, -16);
 
-        alert("It worked! \n Comp length changed, footage renamed. \n Set_Comp_Duration v2.0 by Shannon");
+        alert("It worked! \n Comp length changed. \n Set_Comp_Duration v2.0 by Shannon");
     }
 }
 chageCompsDuration();
