@@ -1,4 +1,4 @@
-# Set_Comp_Durations
+# Set Comp Durations
 
 This is an Adobe After Effects script.
 
