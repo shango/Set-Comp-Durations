@@ -1,0 +1,58 @@
+
+/*
+Code for Import https://scriptui.joonas.me — (Triple click to select): 
+{"activeId":5,"items":{"item-0":{"id":0,"type":"Dialog","parentId":false,"style":{"enabled":true,"varName":null,"windowType":"Dialog","creationProps":{"su1PanelCoordinates":false,"maximizeButton":false,"minimizeButton":false,"independent":false,"closeButton":true,"borderless":false,"resizeable":false},"text":"Dialog","preferredSize":[300,100],"margins":16,"orientation":"column","spacing":10,"alignChildren":["center","top"]}},"item-1":{"id":1,"type":"Button","parentId":0,"style":{"enabled":true,"varName":"SetDurationsBtn","text":"Click to Set","justify":"center","preferredSize":[0,0],"alignment":null,"helpTip":"First click the plate in the project panel that you want to match too."}},"item-3":{"id":3,"type":"StaticText","parentId":0,"style":{"enabled":true,"varName":"Instructions","creationProps":{"truncate":"none","multiline":false,"scrolling":false},"softWrap":true,"text":"Select Plate in Project Pane to Match Duration","justify":"center","preferredSize":[0,0],"alignment":null,"helpTip":null}},"item-4":{"id":4,"type":"Panel","parentId":6,"style":{"enabled":true,"varName":"SelctPlate","creationProps":{"borderStyle":"etched","su1PanelCoordinates":false},"text":"SelectedPlate","preferredSize":[200,50],"margins":10,"orientation":"column","spacing":10,"alignChildren":["left","top"],"alignment":null}},"item-5":{"id":5,"type":"Panel","parentId":6,"style":{"enabled":true,"varName":"NewDuration","creationProps":{"borderStyle":"etched","su1PanelCoordinates":false},"text":"Duration","preferredSize":[0,50],"margins":10,"orientation":"column","spacing":10,"alignChildren":["left","top"],"alignment":null}},"item-6":{"id":6,"type":"Group","parentId":0,"style":{"enabled":true,"varName":null,"preferredSize":[0,0],"margins":0,"orientation":"row","spacing":10,"alignChildren":["left","center"],"alignment":null}}},"order":[0,3,6,4,5,1],"settings":{"importJSON":true,"indentSize":false,"cepExport":false,"includeCSSJS":true,"showDialog":true,"functionWrapper":false,"afterEffectsDockable":false,"itemReferenceList":"None"}}
+*/ 
+
+// DIALOG
+// ======
+var dialog = new Window("dialog"); 
+    dialog.text = "Dialog"; 
+    dialog.preferredSize.width = 300; 
+    dialog.preferredSize.height = 100; 
+    dialog.orientation = "column"; 
+    dialog.alignChildren = ["center","top"]; 
+    dialog.spacing = 10; 
+    dialog.margins = 16; 
+
+var Instructions = dialog.add("statictext", undefined, undefined, {name: "Instructions"}); 
+    Instructions.text = "Select Plate in Project Pane to Match Duration"; 
+    Instructions.justify = "center"; 
+
+// GROUP1
+// ======
+var group1 = dialog.add("group", undefined, {name: "group1"}); 
+    group1.orientation = "row"; 
+    group1.alignChildren = ["left","center"]; 
+    group1.spacing = 10; 
+    group1.margins = 0; 
+
+// SELCTPLATE
+// ==========
+var SelctPlate = group1.add("panel", undefined, undefined, {name: "SelctPlate"}); 
+    SelctPlate.text = "SelectedPlate"; 
+    SelctPlate.preferredSize.width = 200; 
+    SelctPlate.preferredSize.height = 50; 
+    SelctPlate.orientation = "column"; 
+    SelctPlate.alignChildren = ["left","top"]; 
+    SelctPlate.spacing = 10; 
+    SelctPlate.margins = 10; 
+
+// NEWDURATION
+// ===========
+var NewDuration = group1.add("panel", undefined, undefined, {name: "NewDuration"}); 
+    NewDuration.text = "Duration"; 
+    NewDuration.preferredSize.height = 50; 
+    NewDuration.orientation = "column"; 
+    NewDuration.alignChildren = ["left","top"]; 
+    NewDuration.spacing = 10; 
+    NewDuration.margins = 10; 
+
+// DIALOG
+// ======
+var SetDurationsBtn = dialog.add("button", undefined, undefined, {name: "SetDurationsBtn"}); 
+    SetDurationsBtn.helpTip = "First click the plate in the project panel that you want to match too."; 
+    SetDurationsBtn.text = "Click to Set"; 
+
+dialog.show();
+
